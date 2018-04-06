@@ -6,9 +6,45 @@ use Illuminate\Database\Eloquent\Model;
 
 class Recipe extends Model
 {
-	protected $guarded = [];
+	protected $fillable = [
+		'recipeName',
+		'ingredient1',
+		'ingredient2',
+		'ingredient3',
+		'ingredient4',
+		'ingredient5',
+		'ingredient6',
+		'ingredient7',
+		'ingredient8',
+		'ingredient9',
+		'ingredient10',
+		'ingredient11',
+		'ingredient12',
+		'ingredient13',
+		'ingredient14',
+		'ingredient15',
+		'instruction1',
+		'instruction2',
+		'instruction3',
+		'instruction4',
+		'instruction5',
+		'instruction6',
+		'instruction7',
+		'instruction8',
+		'instruction9',
+		'instruction10',
+		'instruction11',
+		'instruction12',
+		'instruction13',
+		'instruction14',
+		'instruction15',
+		'image',
+		'tags'
+	];
 
-	public function scopeTags($query,$tag) {
-		return $query->where('tags','like',$tag);
+	public function scopeTags($query,$tag) 
+	{
+		return $query->where('tags','LIKE',$tag);
 	}
+
 }
