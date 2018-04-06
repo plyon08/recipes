@@ -9994,26 +9994,3 @@ a.text-dark:focus {
   }
 }
 
-.navbar-laravel {
-  background-color: #fff;
-  -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
-          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
-}
-
-.a0-u--sep {
-  font-size: 1em;
-  display: inline-block;
-  width: 1em;
-  height: 1em;
-  vertical-align: top;
-  margin: 0 0.5em;
-}
-
-.a0-u--sep:before {
-  content: '\2022';
-}
-
-.a0-u--red {
-  color: #EB5424;
-}
-
