@@ -1,6 +1,6 @@
 
 // Fonts
-@import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");
+@import url("https://fonts.googleapis.com/css?family=Asap:400,700");
 
 // Variables
 @import "variables";
@@ -8,3 +8,43 @@
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
+/*
+    XS PHONE SCREENS and GLOBAL STYLES
+*/
+body {
+  font-family: 'Asap',sans-serif;
+  font-size: 16px;
+  letter-spacing: 2px
+}
+
+.nav-item {
+  margin: 10px 0px
+}
+.nav-item a {
+  width: 100%
+}
+
+.welcome-bg {
+  height: 300px
+}
+.welcome-heading {
+  font-size: 2em
+}
+.welcome-subheading {
+  font-size: 1.5em
+}
+
+/*
+    MD LG XL LAPTOP/DESKTOP SCREENS
+*/
+@include media-breakpoint-up(md) {
+  .welcome-bg {
+    height: 500px
+  }
+  .welcome-heading {
+    font-size: 5em
+  }
+  .welcome-subheading {
+    font-size: 2em
+  }
+}
