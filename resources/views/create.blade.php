@@ -5,7 +5,7 @@
 	@include('includes.error')
 
 	<h1>Add Recipe</h1>
-		{!! Form::open(['url' => '/recipes','class' => 'needs-validation']) !!}
+		{!! Form::open(['url' => '/recipes','class' => 'needs-validation','files' => true]) !!}
 			<div class="row">
 				<div class='col-xs-12'>
 					{!! Form::label('Recipe Name') !!}
@@ -44,8 +44,7 @@
 				<label for="image">Image Name</label>
 			</div>
 			<div class='col-xs-12 col-md-4 mb-3'>
-				<input type="text" class="form-control" id="image" name='image' placeholder="Enter file name of image">
-				<small class="form-text text-muted">Ex. name-of-image.jpg</small>
+				{!! Form::file('image') !!}
 			</div>
 		</div>
 		<hr>
@@ -54,7 +53,7 @@
 				<label for="tags">Tags</label>
 			</div>
 			<div class='col-xs-12 col-md-4 mb-3'>
-				{!! Form::select('tags', ['beef' => 'Beef','chicken' => 'Chicken','pork' => 'Pork','ham' => 'Ham','fish' => 'Fish','pasta' => 'Pasta','dessert' => 'Dessert'],null, ['placeholder' => 'Please pick a tag...','class' => 'form-control']) !!}
+				{!! Form::select('tags', ['beef' => 'Beef','chicken' => 'Chicken','pork' => 'Pork','ham' => 'Ham','fish' => 'Fish','pasta' => 'Pasta','dessert' => 'Dessert'],null, ['placeholder' => 'Please pick a tag...']) !!}
 			</div>
 		</div>
 		<hr>

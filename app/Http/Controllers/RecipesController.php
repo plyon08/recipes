@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Recipe;
 use Illuminate\Http\Request;
+use Illuminate\Http\File;
+use Illuminate\Support\Facades\Storage;
 
 class RecipesController extends Controller
 {
@@ -34,12 +36,18 @@ class RecipesController extends Controller
 	{
 		$this->validate(request(),[
 			'recipeName'=>'required',
-			'image'=>'required',
 			'tags'=>'required'
 		]);
 
 		$recipe = new Recipe;
 		$data = $request->only($recipe->getFillable());
+
+		if ($request->hasFile('image')) {
+			$path = $request->file('image')->store('public');
+			$file_name = $request->file('image')->hashName();
+			$data['image'] = $file_name;
+		}
+
 		$recipe->fill($data)->save();
 
 		session()->flash('message','Recipe Saved Successfully!');
@@ -61,12 +69,20 @@ class RecipesController extends Controller
 	{
 		$this->validate(request(),[
 			'recipeName'=>'required',
-			'image'=>'required',
 			'tags'=>'required'
 		]);
 
 		$recipe = Recipe::find($recipe->id);
 		$data = $request->only($recipe->getFillable());
+
+		if ($request->hasFile('image')) {
+			$path = $request->file('image')->store('public');
+			$file_name = $request->file('image')->hashName();
+			$data['image'] = $file_name;
+		} else {
+			$data['image'] = $recipe->image;
+		}
+		
 		$recipe->fill($data)->save();
 
 		session()->flash('message','Recipe Updated Successfully!');

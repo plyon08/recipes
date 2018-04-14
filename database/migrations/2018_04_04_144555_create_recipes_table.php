@@ -46,7 +46,7 @@ class CreateRecipesTable extends Migration
 			$table->text('instruction13')->nullable();
 			$table->text('instruction14')->nullable();
 			$table->text('instruction15')->nullable();
-			$table->string('image');
+			$table->string('image')->nullable();
 			$table->string('tags');
 			$table->timestamps();
 		});

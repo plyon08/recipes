@@ -4,7 +4,7 @@
 
   <h1>Show a recipe</h1>
   <p>{{ $recipe->recipeName }}</p>
-  <p>{{ $recipe->image }}</p>
+  <p><img src="{{ asset('storage/'. $recipe->image) }}" alt='No Image is Available' width='300px' height='auto' /></p>
   <h3>Ingredients</h3>
   <ul>
     @if (!empty($recipe->ingredient1))
@@ -50,7 +50,7 @@
     @if (!empty($recipe->ingredient11))
       <li>{{ $recipe->ingredient11 }}</li>
     @endif
-    
+
     @if (!empty($recipe->ingredient12))
       <li>{{ $recipe->ingredient12 }}</li>
     @endif
@@ -112,7 +112,7 @@
     @if (!empty($recipe->instruction11))
       <li>{{ $recipe->instruction11 }}</li>
     @endif
-    
+
     @if (!empty($recipe->instruction12))
       <li>{{ $recipe->instruction12 }}</li>
     @endif
