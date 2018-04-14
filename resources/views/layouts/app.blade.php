@@ -15,12 +15,16 @@
 
 </head>
 <body class='container-fluid'>
+	@include('includes.success')
+
 	@include('includes.nav')
+
 	<main class='row justify-content-center'>
 		<section class='col'>
 			@yield('content')
 		</section>
 	</main>
+
 	@include('includes.scripts')
 </body>
 </html>

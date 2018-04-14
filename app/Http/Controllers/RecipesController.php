@@ -12,7 +12,7 @@ class RecipesController extends Controller
 	{
     $this->middleware('auth');
 	}
-	
+
 	public function index()
 	{
 		if(!empty(request(['tag']))) {
@@ -42,6 +42,8 @@ class RecipesController extends Controller
 		$data = $request->only($recipe->getFillable());
 		$recipe->fill($data)->save();
 
+		session()->flash('message','Recipe Saved Successfully!');
+
 		return redirect('/recipes');
 	}
 
@@ -67,6 +69,8 @@ class RecipesController extends Controller
 		$data = $request->only($recipe->getFillable());
 		$recipe->fill($data)->save();
 
+		session()->flash('message','Recipe Updated Successfully!');
+
 		return redirect('/recipes/'.$recipe->id);
 	}
 
@@ -75,6 +79,8 @@ class RecipesController extends Controller
 		$recipe = Recipe::find($recipe->id);
 
 		$recipe->delete();
+
+		session()->flash('message','Recipe Deleted Successfully!');
 
 		return redirect('/recipes');
 	}
