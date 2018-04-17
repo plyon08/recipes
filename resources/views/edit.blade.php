@@ -55,10 +55,10 @@
 		<hr>
 		<div class='row'>
 			<div class="col-xs-12 mb-3">
-				<label for="tags">Tags</label>
+				<label for="tags">Tag</label>
 			</div>
 			<div class='col-xs-12 col-md-4 mb-3'>
-				{!! Form::select('tags', ['beef' => 'Beef','chicken' => 'Chicken','pork' => 'Pork','ham' => 'Ham','fish' => 'Fish','pasta' => 'Pasta','dessert' => 'Dessert'],null, ['placeholder' => 'Please pick a tag...','class' => 'form-control']) !!}
+				{!! Form::select('tag', ['Beef' => 'Beef','Chicken' => 'Chicken','Pork' => 'Pork','Ham' => 'Ham','Fish' => 'Fish','Pasta' => 'Pasta','Dessert' => 'Dessert'],null, ['placeholder' => 'Please pick a tag...','class' => 'form-control']) !!}
 			</div>
 		</div>
 		<hr>

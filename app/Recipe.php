@@ -39,12 +39,12 @@ class Recipe extends Model
 		'instruction14',
 		'instruction15',
 		'image',
-		'tags'
+		'tag'
 	];
 
-	public function scopeTags($query,$tag) 
+	public function scopeTag($query,$tag)
 	{
-		return $query->where('tags','LIKE',$tag);
+		return $query->where('tag','LIKE',$tag);
 	}
 
 }

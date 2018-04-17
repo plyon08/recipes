@@ -129,7 +129,7 @@
       <li>{{ $recipe->instruction15 }}</li>
     @endif
   </ol>
-  <p>{{ $recipe->tags }}</p>
+  <p>{{ $recipe->tag }}</p>
 
   <p><a class='btn btn-primary' href="/recipes/{{ $recipe->id }}/edit">Edit Recipe</a></p>
   <form method='POST' action='/recipes/{{ $recipe->id }}'>

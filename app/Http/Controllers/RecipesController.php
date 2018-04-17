@@ -19,7 +19,7 @@ class RecipesController extends Controller
 	{
 		if(!empty(request(['tag']))) {
 			$tag = request(['tag']);
-			$recipes = Recipe::tags($tag)->orderBy('recipeName')->get();
+			$recipes = Recipe::tag($tag)->orderBy('recipeName')->get();
 		} else {
 			$recipes = Recipe::latest()->get();
 		}
@@ -36,7 +36,7 @@ class RecipesController extends Controller
 	{
 		$this->validate(request(),[
 			'recipeName'=>'required',
-			'tags'=>'required'
+			'tag'=>'required'
 		]);
 
 		$recipe = new Recipe;
@@ -69,7 +69,7 @@ class RecipesController extends Controller
 	{
 		$this->validate(request(),[
 			'recipeName'=>'required',
-			'tags'=>'required'
+			'tag'=>'required'
 		]);
 
 		$recipe = Recipe::find($recipe->id);
@@ -82,7 +82,7 @@ class RecipesController extends Controller
 		} else {
 			$data['image'] = $recipe->image;
 		}
-		
+
 		$recipe->fill($data)->save();
 
 		session()->flash('message','Recipe Updated Successfully!');
