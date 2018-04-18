@@ -16,7 +16,7 @@
 
 	@include('includes.nav')
 
-	<main class='row justify-content-center'>
+	<main class='row justify-content-center mt-5'>
 		<section class='col'>
 			@yield('content')
 		</section>

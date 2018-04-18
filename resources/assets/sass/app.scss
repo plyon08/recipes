@@ -51,6 +51,13 @@ a:hover, a:focus {
   font-size: 1em
 }
 
+.recipe-index {
+  transform: scale(1,1);
+  transition: transform .4s;
+}
+.recipe-index:hover, .recipe-index:focus {
+  transform: scale(.9,.9);
+}
 .recipe-img {
   border-radius: 16px 16px 0px 0px;
 }

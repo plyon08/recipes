@@ -1,10 +1,16 @@
 @extends('layouts.app')
 
 @section('content')
-	<h1>Recipes</h1>
-	<ul>
+	<div class='row'>
 		@foreach ($recipes as $r)
-			<li><a href="/recipes/{{ $r->id }}">{{ $r->recipeName }}</a></li>
+			<div class='col-md-6 col-lg-3'>
+				<div class='center recipe-index'>
+					<a href="/recipes/{{ $r->id }}">
+						<img class='recipe-img' src="{{ asset('storage/'. $r->image) }}" alt='No Image is Available' width='100%' height='auto' />
+					</a>
+					<div class='recipe-name-index'>{{ $r->recipeName }}</div>
+				</div>
+			</div>
 		@endforeach
-	</ul>
+	</div>
 @endsection

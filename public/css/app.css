@@ -10437,6 +10437,21 @@ a:focus {
   font-size: 1em;
 }
 
+.recipe-index {
+  -webkit-transform: scale(1, 1);
+          transform: scale(1, 1);
+  -webkit-transition: -webkit-transform .4s;
+  transition: -webkit-transform .4s;
+  transition: transform .4s;
+  transition: transform .4s, -webkit-transform .4s;
+}
+
+.recipe-index:hover,
+.recipe-index:focus {
+  -webkit-transform: scale(0.9, 0.9);
+          transform: scale(0.9, 0.9);
+}
+
 .recipe-img {
   border-radius: 16px 16px 0px 0px;
 }
