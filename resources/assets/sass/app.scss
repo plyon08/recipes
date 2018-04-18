@@ -14,8 +14,20 @@
 body {
   font-family: 'Asap',sans-serif;
   font-size: 16px;
-  letter-spacing: 2px
+  letter-spacing: 2px;
+  background-color: $color-dark;
+  color: $color-light;
 }
+
+a:link, a:active, a:visited {
+  text-decoration: none;
+}
+
+a:hover, a:focus {
+  text-decoration: none
+}
+
+.center {text-align: center}
 
 #alert {
   position: fixed;
@@ -23,32 +35,43 @@ body {
   z-index:10
 }
 
+//  Navbar
+
 .nav-item {
-  margin: 10px 0px
+  margin: 5px
 }
 .nav-item a {
   width: 100%
 }
 
-.welcome-bg {
-  height: 300px
-}
 .welcome-heading {
   font-size: 2em
 }
 .welcome-subheading {
-  font-size: 1.5em
+  font-size: 1em
+}
+
+.recipe-img {
+  border-radius: 16px 16px 0px 0px;
+}
+.recipe-name-index {
+  background-color: $color-light;
+  color: $color-blue-dark;
+  border-radius: 0px 0px 16px 16px
 }
 
 /*
     MD LG XL LAPTOP/DESKTOP SCREENS
 */
 @include media-breakpoint-up(md) {
-  .welcome-bg {
-    height: 500px
+
+  //  Navbar
+  .nav-item {
+    margin: 5px
   }
+
   .welcome-heading {
-    font-size: 5em
+    font-size: 4em
   }
   .welcome-subheading {
     font-size: 2em

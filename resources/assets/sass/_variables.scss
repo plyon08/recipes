@@ -1,36 +1,10 @@
 
-// Body
-$body-bg: #f5f8fa;
+// Colors
 
-// Primary colors
-// http://styleguide.auth0.com/#/design/primary-colors
-
-$color-red: #EB5424;
-$color-blue-light: #44C7F4;
-$color-blue: #16214D;
-$color-yellow: #EACA2C;
-
-// Secondary colors
-// http://styleguide.auth0.com/#/design/secondary-colors
-
-$color-orange: #FF9A57;
-$color-oil: #5C666F;
-$color-green: #01B48F;
-$color-gray: #D0D2D3;
-$color-pink: #C879B2;
-
-// Background colors
-// http://styleguide.auth0.com/#/design/background-colors
-
-$bg-color-dark: #222228;
-$bg-color-oil: $color-oil;
-$bg-color-gray: #E3E5E7;
-$bg-color-light: #F5F7F9;
-
-// Status colors
-// http://styleguide.auth0.com/#/design/status-colors
-
-$bg-color-success: #7ED321;
-$bg-color-error: #FF3E00;
-$bg-color-info: #44C7F4;
-$bg-color-alert: #F0CC00;
+$color-blue: rgb(0, 123, 255);
+$color-blue-dark: rgb(0, 68, 139);
+$color-blue-light: rgb(58, 153, 252);
+$color-dark: rgb(35,35,35);
+$color-light: rgb(225,225,225);
+$color-success: rgb(125, 210, 33);
+$color-danger: rgb(249, 215, 218);
