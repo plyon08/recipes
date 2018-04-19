@@ -6,7 +6,7 @@
     <div class='col-md-10'>
       <h2>{{ $recipe->recipeName }}</h2>
 
-      <p class='my-4'><img class='recipe-img-show' src="{{ asset('storage/'. $recipe->image) }}" alt='No Image is Available' width='100%' height='auto' /></p>
+      <p class='my-4'><img class='recipe-img' src="{{ asset('storage/'. $recipe->image) }}" alt='No Image is Available' width='100%' height='auto' /></p>
 
       <div class='my-4'>
         <h4 class='mt-4'>Ingredients</h4>
