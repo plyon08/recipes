@@ -9,14 +9,15 @@
           We will need to see those credentials before we show you anything delicious to make...so please sign in!
         </p>
         <p>
-          I will leave you with this image of amazing looking pasta though!
+          I've set up a demo account that is seperate from my account as well for people to check out how it works.
+        </p>
+        <p>
+          Username: demo
+        </p>
+        <p>
+          Password: demo1234!
         </p>
       </div>
-    </div>
-  </div>
-  <div class='row justify-content-center'>
-    <div class='col-10 col-md-6'>
-      <img src="{{ asset('storage/bg-image.jpg') }}" alt="Pasta Pic" width='100%' height='auto' />
     </div>
   </div>
 @endsection
