@@ -10415,6 +10415,10 @@ a:focus {
   text-decoration: none;
 }
 
+label {
+  font-size: 1.5em;
+}
+
 .center {
   text-align: center;
 }
@@ -10456,7 +10460,7 @@ a:focus {
           transform: scale(0.9, 0.9);
 }
 
-.recipe-img {
+.recipe-img-index {
   border-radius: 16px 16px 0px 0px;
 }
 
@@ -10466,7 +10470,7 @@ a:focus {
   border-radius: 0px 0px 16px 16px;
 }
 
-.recipe-img-show {
+.recipe-img {
   border-radius: 6px;
 }
 
@@ -10491,7 +10495,7 @@ a:focus {
     font-size: 2em;
   }
 
-  .recipe-img-show {
+  .recipe-img {
     width: 400px;
   }
 }

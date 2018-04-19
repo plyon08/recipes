@@ -18,17 +18,17 @@ body {
   background-color: $color-dark;
   color: $color-light;
 }
-
 h2 {
   text-align: center
 }
-
 a:link, a:active, a:visited {
   text-decoration: none;
 }
-
 a:hover, a:focus {
   text-decoration: none
+}
+label {
+  font-size: 1.5em;
 }
 
 .center {text-align: center}
@@ -66,7 +66,7 @@ a:hover, a:focus {
 .recipe-index:hover, .recipe-index:focus {
   transform: scale(.9,.9);
 }
-.recipe-img {
+.recipe-img-index {
   border-radius: 16px 16px 0px 0px;
 }
 .recipe-name-index {
@@ -75,11 +75,12 @@ a:hover, a:focus {
   border-radius: 0px 0px 16px 16px
 }
 
-//  Show
+//  Show & Edit
 
-  .recipe-img-show {
+  .recipe-img {
     border-radius: 6px;
   }
+
 /*
     MD LG XL LAPTOP/DESKTOP SCREENS
 */
@@ -103,9 +104,9 @@ a:hover, a:focus {
     font-size: 2em
   }
 
-  //  Show
+  //  Show & Edit
 
-  .recipe-img-show {
+  .recipe-img {
     width: 400px
   }
 }
