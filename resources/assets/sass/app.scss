@@ -41,6 +41,11 @@ label {
 
 //  Navbar
 
+.login-status {
+  color: $color-blue;
+  font-style: italic;
+  font-size: .8em;
+}
 .nav-item {
   margin: 5px
 }
@@ -102,6 +107,13 @@ label {
   }
   .welcome-subheading {
     font-size: 2em
+  }
+
+  //  Index
+
+  .recipe-img-index {
+    height: 200px;
+    width: 100%;
   }
 
   //  Show & Edit

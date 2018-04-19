@@ -10429,6 +10429,12 @@ label {
   z-index: 10;
 }
 
+.login-status {
+  color: #007bff;
+  font-style: italic;
+  font-size: .8em;
+}
+
 .nav-item {
   margin: 5px;
 }
@@ -10493,6 +10499,11 @@ label {
 
   .welcome-subheading {
     font-size: 2em;
+  }
+
+  .recipe-img-index {
+    height: 200px;
+    width: 100%;
   }
 
   .recipe-img {
