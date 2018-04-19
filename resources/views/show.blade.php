@@ -2,140 +2,69 @@
 
 @section('content')
 
-  <h1>Show a recipe</h1>
-  <p>{{ $recipe->recipeName }}</p>
-  <p><img src="{{ asset('storage/'. $recipe->image) }}" alt='No Image is Available' width='300px' height='auto' /></p>
-  <h3>Ingredients</h3>
-  <ul>
-    @if (!empty($recipe->ingredient1))
-      <li>{{ $recipe->ingredient1 }}</li>
-    @endif
+  <div class='row justify-content-center'>
+    <div class='col-md-10'>
+      <h2>{{ $recipe->recipeName }}</h2>
 
-    @if (!empty($recipe->ingredient2))
-      <li>{{ $recipe->ingredient2 }}</li>
-    @endif
+      <p class='my-4'><img class='recipe-img-show' src="{{ asset('storage/'. $recipe->image) }}" alt='No Image is Available' width='100%' height='auto' /></p>
 
-    @if (!empty($recipe->ingredient3))
-      <li>{{ $recipe->ingredient3 }}</li>
-    @endif
+      <div class='my-4'>
+        <h4 class='mt-4'>Ingredients</h4>
+        <ul>
 
-    @if (!empty($recipe->ingredient4))
-      <li>{{ $recipe->ingredient4 }}</li>
-    @endif
+          @php
+            $ingredients = [];
+            array_push($ingredients,$recipe->ingredient1,$recipe->ingredient2,$recipe->ingredient3,$recipe->ingredient4,$recipe->ingredient5,$recipe->ingredient6,$recipe->ingredient7,$recipe->ingredient8,$recipe->ingredient9,$recipe->ingredient10,$recipe->ingredient11,$recipe->ingredient12,$recipe->ingredient13,$recipe->ingredient14,$recipe->ingredient15);
 
-    @if (!empty($recipe->ingredient5))
-      <li>{{ $recipe->ingredient5 }}</li>
-    @endif
+            foreach ($ingredients as $i) {
+              if(!empty($i)) {
+                echo "<li>
+                  $i
+                </li>";
+              }
+            }
+          @endphp
 
-    @if (!empty($recipe->ingredient6))
-      <li>{{ $recipe->ingredient6 }}</li>
-    @endif
+        </ul>
+      </div>
 
-    @if (!empty($recipe->ingredient7))
-      <li>{{ $recipe->ingredient7 }}</li>
-    @endif
+      <div class='my-4'>
+        <h4 class='mt-4'>Instructions</h4>
+        <ol>
 
-    @if (!empty($recipe->ingredient8))
-      <li>{{ $recipe->ingredient8 }}</li>
-    @endif
+          @php
+            $instructions = [];
+            array_push($instructions,$recipe->instruction1,$recipe->instruction2,$recipe->instruction3,$recipe->instruction4,$recipe->instruction5,$recipe->instruction6,$recipe->instruction7,$recipe->instruction8,$recipe->instruction9,$recipe->instruction10,$recipe->instruction11,$recipe->instruction12,$recipe->instruction13,$recipe->instruction14,$recipe->instruction15);
 
-    @if (!empty($recipe->ingredient9))
-      <li>{{ $recipe->ingredient9 }}</li>
-    @endif
+            foreach ($instructions as $i) {
+              if(!empty($i)) {
+                echo "<li>
+                  $i
+                </li>";
+              }
+            }
+          @endphp
 
-    @if (!empty($recipe->ingredient10))
-      <li>{{ $recipe->ingredient10 }}</li>
-    @endif
+        </ol>
+      </div>
 
-    @if (!empty($recipe->ingredient11))
-      <li>{{ $recipe->ingredient11 }}</li>
-    @endif
+      <p class='my-4'>Tag: {{ $recipe->tag }}</p>
 
-    @if (!empty($recipe->ingredient12))
-      <li>{{ $recipe->ingredient12 }}</li>
-    @endif
-
-    @if (!empty($recipe->ingredient13))
-      <li>{{ $recipe->ingredient13 }}</li>
-    @endif
-
-    @if (!empty($recipe->ingredient14))
-      <li>{{ $recipe->ingredient14 }}</li>
-    @endif
-
-    @if (!empty($recipe->ingredient15))
-      <li>{{ $recipe->ingredient15 }}</li>
-    @endif
-  </ul>
-  <h3>Instructions</h3>
-  <ol>
-    @if (!empty($recipe->instruction1))
-      <li>{{ $recipe->instruction1 }}</li>
-    @endif
-
-    @if (!empty($recipe->instruction2))
-      <li>{{ $recipe->instruction2 }}</li>
-    @endif
-
-    @if (!empty($recipe->instruction3))
-      <li>{{ $recipe->instruction3 }}</li>
-    @endif
-
-    @if (!empty($recipe->instruction4))
-      <li>{{ $recipe->instruction4 }}</li>
-    @endif
-
-    @if (!empty($recipe->instruction5))
-      <li>{{ $recipe->instruction5 }}</li>
-    @endif
-
-    @if (!empty($recipe->instruction6))
-      <li>{{ $recipe->instruction6 }}</li>
-    @endif
-
-    @if (!empty($recipe->instruction7))
-      <li>{{ $recipe->instruction7 }}</li>
-    @endif
-
-    @if (!empty($recipe->instruction8))
-      <li>{{ $recipe->instruction8 }}</li>
-    @endif
-
-    @if (!empty($recipe->instruction9))
-      <li>{{ $recipe->instruction9 }}</li>
-    @endif
-
-    @if (!empty($recipe->instruction10))
-      <li>{{ $recipe->instruction10 }}</li>
-    @endif
-
-    @if (!empty($recipe->instruction11))
-      <li>{{ $recipe->instruction11 }}</li>
-    @endif
-
-    @if (!empty($recipe->instruction12))
-      <li>{{ $recipe->instruction12 }}</li>
-    @endif
-
-    @if (!empty($recipe->instruction13))
-      <li>{{ $recipe->instruction13 }}</li>
-    @endif
-
-    @if (!empty($recipe->instruction14))
-      <li>{{ $recipe->instruction14 }}</li>
-    @endif
-
-    @if (!empty($recipe->instruction15))
-      <li>{{ $recipe->instruction15 }}</li>
-    @endif
-  </ol>
-  <p>{{ $recipe->tag }}</p>
-
-  <p><a class='btn btn-primary' href="/recipes/{{ $recipe->id }}/edit">Edit Recipe</a></p>
-  <form method='POST' action='/recipes/{{ $recipe->id }}'>
-    {{ method_field('DELETE') }}
-		{{ csrf_field() }}
-    <button type='submit' class='btn btn-primary'>Delete Recipe</button>
-  </form>
+      <div class='row justify-content-md-start'>
+        <div class='col col-md-2 col-lg-1'>
+          <div class='center'><a class='btn btn-primary' href="/recipes/{{ $recipe->id }}/edit">Update</a></div>
+        </div>
+        <div class='col col-md-2 col-lg-1'>
+          <div class='center'>
+            <form method='POST' action='/recipes/{{ $recipe->id }}'>
+              {{ method_field('DELETE') }}
+          		{{ csrf_field() }}
+              <button type='submit' class='btn btn-danger'>Delete</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
 @endsection

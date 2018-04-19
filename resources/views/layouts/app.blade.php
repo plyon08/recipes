@@ -11,7 +11,7 @@
 	<script src="{{ mix('/js/app.js') }} "></script>
 
 </head>
-<body class='container-fluid'>
+<body class='container-fluid mb-4'>
 	@include('includes.success')
 
 	@include('includes.nav')

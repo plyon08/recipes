@@ -10400,6 +10400,10 @@ body {
   color: #e1e1e1;
 }
 
+h2 {
+  text-align: center;
+}
+
 a:link,
 a:active,
 a:visited {
@@ -10462,11 +10466,19 @@ a:focus {
   border-radius: 0px 0px 16px 16px;
 }
 
+.recipe-img-show {
+  border-radius: 6px;
+}
+
 /*
     MD LG XL LAPTOP/DESKTOP SCREENS
 */
 
 @media (min-width: 768px) {
+  h2 {
+    text-align: left;
+  }
+
   .nav-item {
     margin: 5px;
   }
@@ -10477,6 +10489,10 @@ a:focus {
 
   .welcome-subheading {
     font-size: 2em;
+  }
+
+  .recipe-img-show {
+    width: 400px;
   }
 }
 
