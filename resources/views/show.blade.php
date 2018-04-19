@@ -18,8 +18,9 @@
 
             foreach ($ingredients as $i) {
               if(!empty($i)) {
+                $ingredient = htmlspecialchars($i);
                 echo "<li>
-                  $i
+                  $ingredient
                 </li>";
               }
             }
@@ -38,8 +39,9 @@
 
             foreach ($instructions as $i) {
               if(!empty($i)) {
+                $instruction = htmlspecialchars($i);
                 echo "<li>
-                  $i
+                  $instruction
                 </li>";
               }
             }
