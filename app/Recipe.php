@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Recipe extends Model
 {
 	protected $fillable = [
+		'userID',
 		'recipeName',
 		'ingredient1',
 		'ingredient2',
@@ -42,9 +43,9 @@ class Recipe extends Model
 		'tag'
 	];
 
-	public function scopeTag($query,$tag)
+	public function scopeTag($query,$tag,$userID)
 	{
-		return $query->where('tag','LIKE',$tag);
+		return $query->where([['tag',$tag],['userID',$userID]]);
 	}
 
 }

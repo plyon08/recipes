@@ -17,11 +17,13 @@ class RecipesController extends Controller
 
 	public function index()
 	{
+		$userID = \Auth::user()->sub;
+
 		if(!empty(request(['tag']))) {
 			$tag = request(['tag']);
-			$recipes = Recipe::tag($tag)->orderBy('recipeName')->get();
+			$recipes = Recipe::tag($tag,$userID)->orderBy('recipeName')->get();
 		} else {
-			$recipes = Recipe::latest()->get();
+			$recipes = Recipe::latest()->where('userID',$userID)->get();
 		}
 
 		return view('index',compact('recipes'));
@@ -41,11 +43,14 @@ class RecipesController extends Controller
 
 		$recipe = new Recipe;
 		$data = $request->only($recipe->getFillable());
+		$data['userID'] = \Auth::user()->sub;
 
 		if ($request->hasFile('image')) {
 			$path = $request->file('image')->store('public');
 			$file_name = $request->file('image')->hashName();
 			$data['image'] = $file_name;
+		} else {
+			$data['image'] = 'no-image.png';
 		}
 
 		$recipe->fill($data)->save();
@@ -74,6 +79,7 @@ class RecipesController extends Controller
 
 		$recipe = Recipe::find($recipe->id);
 		$data = $request->only($recipe->getFillable());
+		$data['userID'] = \Auth::user()->sub;
 
 		if ($request->hasFile('image')) {
 			$path = $request->file('image')->store('public');
