@@ -6,14 +6,14 @@
 
 	<div class='row'>
 		<div class='col'>
-			<h2>Add Recipe</h2>
+			<h2>Update Recipe</h2>
 				{!! Form::model($recipe,['url' => '/recipes/'.$recipe->id,'method' => 'patch','class' => 'needs-validation','files' => true]) !!}
 					{!! Form::token() !!}
 					<div class="row my-5">
 						<div class='col-12'>
 							{!! Form::label('Recipe Name') !!}
 						</div>
-						<div class='col-12'>
+						<div class='col-12 col-md-6'>
 							{!! Form::text('recipeName',null,['placeholder' => 'Enter the name of the recipe','class' => 'form-control']) !!}
 						</div>
 					</div>
