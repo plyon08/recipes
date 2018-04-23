@@ -8,8 +8,8 @@
 
 	<title>Recipes</title>
 
-	<link rel="stylesheet" href="{{ mix('/css/app.css') }}" />
-	<script src="{{ mix('/js/app.js') }} "></script>
+	<link rel="stylesheet" href="{{ asset('css/app.css') }}" />
+	<script src="{{ asset('js/app.js') }} "></script>
 
 </head>
 <body class='container-fluid mb-4'>
