@@ -34,7 +34,7 @@
               </div>
             </li>
             <li class="nav-item">
-              <a href="{{ url('/recipes/create') }}" class="btn btn-outline-primary">Add Recipe</a>
+              <a href="{{ route('create') }}" class="btn btn-outline-primary">Add Recipe</a>
             </li>
             <li class="nav-item">
               <a href="{{ route('logout') }}" class="btn btn-outline-primary">Logout</a>

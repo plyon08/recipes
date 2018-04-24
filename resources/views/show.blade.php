@@ -54,11 +54,11 @@
 
       <div class='row justify-content-md-start'>
         <div class='col col-md-2 col-lg-1'>
-          <div class='center'><a class='btn btn-primary' href="/recipes/{{ $recipe->id }}/edit">Update</a></div>
+          <div class='center'><a class='btn btn-primary' href="{{ route('edit',['recipe'=>$recipe->id]) }}">Update</a></div>
         </div>
         <div class='col col-md-2 col-lg-1'>
           <div class='center'>
-            <form method='POST' action='/recipes/{{ $recipe->id }}'>
+            <form method='POST' action="{{ route('destroy',['recipe'=>$recipe->id]) }}">
               {{ method_field('DELETE') }}
           		{{ csrf_field() }}
               <button type='submit' class='btn btn-danger'>Delete</button>
