@@ -59,7 +59,7 @@
 						<label for="tags">Tag</label>
 					</div>
 					<div class='col-12 col-md-3 mb-3'>
-						{!! Form::select('tag', ['Beef' => 'Beef','Chicken' => 'Chicken','Pork' => 'Pork','Ham' => 'Ham','Fish' => 'Fish','Pasta' => 'Pasta','Dessert' => 'Dessert'],null, ['placeholder' => 'Please pick a tag...','class' => 'form-control']) !!}
+						{!! Form::select('tag', ['Beef' => 'Beef','Chicken' => 'Chicken','Pork' => 'Pork','Ham' => 'Ham','Fish' => 'Fish','Pasta' => 'Pasta','Dessert' => 'Dessert','Sides' => 'Sides'],null, ['placeholder' => 'Please pick a tag...','class' => 'form-control']) !!}
 					</div>
 				</div>
 				<div class='row justify-content-md-start my-5'>

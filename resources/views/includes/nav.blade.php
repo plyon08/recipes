@@ -31,6 +31,7 @@
                 <a class="dropdown-item" href="{{ url('/recipes?tag=Fish') }}">Fish</a>
                 <a class="dropdown-item" href="{{ url('/recipes?tag=Pasta') }}">Pasta</a>
                 <a class="dropdown-item" href="{{ url('/recipes?tag=Dessert') }}">Dessert</a>
+                <a class="dropdown-item" href="{{ url('/recipes?tag=Sides') }}">Sides</a>
               </div>
             </li>
             <li class="nav-item">
