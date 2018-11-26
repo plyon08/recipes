@@ -4,7 +4,7 @@
   <div class='row justify-content-center'>
     <div class='col-10'>
       <div class='welcome-heading'>Welcome!</div>
-      <div class='welcome-subheading'>
+      {{-- <div class='welcome-subheading'>
         <p>
           We will need to see those credentials before we show you anything delicious to make...so please sign in!
         </p>
@@ -17,7 +17,7 @@
         <p>
           Password: demo1234!
         </p>
-      </div>
+      </div> --}}
     </div>
   </div>
 @endsection
