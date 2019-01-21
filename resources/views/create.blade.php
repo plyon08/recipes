@@ -8,40 +8,27 @@
 		<div class='col'>
 			<h2>Add Recipe</h2>
 				{!! Form::open(['url' => '/recipes','class' => 'needs-validation','files' => true]) !!}
-					{!! Form::token() !!}
-					<div class="row my-5">
-						<div class='col-12'>
-							{!! Form::label('Recipe Name') !!}
-						</div>
-						<div class='col-12 col-md-6'>
-							{!! Form::text('recipeName',null,['placeholder' => 'Enter the name of the recipe','class' => 'form-control']) !!}
-						</div>
+				{!! Form::token() !!}
+                <div class="row my-5">
+                    <div class='col-12 col-md-6 mb-3'>
+                        {!! Form::label('Recipe Name') !!}
+                        {!! Form::text('recipeName',null,['placeholder' => 'Enter the name of the recipe','class' => 'form-control']) !!}
+                    </div>
+                    <div class="col-12 col-md-6 mb-3">
+						<label for="tags">Tag</label>
+						{!! Form::select('tag', ['Beef' => 'Beef','Chicken' => 'Chicken','Pork' => 'Pork','Ham' => 'Ham','Fish' => 'Fish','Pasta' => 'Pasta','Dessert' => 'Dessert','Sides' => 'Sides'],null, ['placeholder' => 'Please pick a tag...','class' => 'form-control']) !!}
 					</div>
-					<div class='row my-5'>
-						<div class="col-12 mb-3">
-							{!! Form::label('Ingredients') !!}
-							<small class="form-text text-muted">Ex. 1/2 cup sugar or 1 lb ham</small>
-						</div>
-
-						@for ($i = 1; $i < 16; $i++)
-							<div class='col-12 col-md-6 col-lg-4 mb-3'>
-								{!! Form::text('ingredient'.$i,null,['placeholder' => 'Ingredient '.$i,'class' => 'form-control']) !!}
-							</div>
-						@endfor
-
-					</div>
-				<div class='row my-5'>
-					<div class="col-12 mb-3">
+                </div>
+                <div class="row my-5">
+                    <div class="col-12 col-md-6 mb-3">
+                        {!! Form::label('Ingredients') !!}
+                        {!! Form::textarea('ingredients',null,['placeholder' => 'List the Ingredients here...','class' => 'form-control']) !!}
+                    </div>
+                    <div class="col-12 col-md-6 mb-3">
 						{!! Form::label('Instructions') !!}
-					</div>
-
-					@for ($i = 1; $i < 16; $i++)
-						<div class='col-12 col-md-6 col-lg-4 mb-3'>
-							{!! Form::text('instruction'.$i,null,['placeholder' => 'Instruction '.$i,'class' => 'form-control']) !!}
-						</div>
-					@endfor
-
-				</div>
+                        {!! Form::textarea('instructions',null,['placeholder' => 'List the Instructions here...','class' => 'form-control']) !!}
+                    </div>
+                </div>
 				<div class='row my-5'>
 					<div class="col-12 mb-3">
 						<label for="image">Image Name</label>
@@ -50,19 +37,14 @@
 						{!! Form::file('image') !!}
 					</div>
 				</div>
-				<div class='row my-5'>
-					<div class="col-12 mb-3">
-						<label for="tags">Tag</label>
-					</div>
-					<div class='col-12 col-md-3 mb-3'>
-						{!! Form::select('tag', ['Beef' => 'Beef','Chicken' => 'Chicken','Pork' => 'Pork','Ham' => 'Ham','Fish' => 'Fish','Pasta' => 'Pasta','Dessert' => 'Dessert','Sides' => 'Sides'],null, ['placeholder' => 'Please pick a tag...','class' => 'form-control']) !!}
-					</div>
-				</div>
 				<div class='row justify-content-md-start my-5'>
-					<div class='col col-md-2 center'>
+					<div class='col col-md-2 col-lg-1 center'>
 						{!! Form::submit('Submit',['class' => 'btn btn-primary']) !!}
-					</div>
-				</div>
+                    </div>
+                    <div class='col col-md-2 col-lg-1 center'>
+                        <a class='btn btn-warning' href='{{ route('index') }}'>Cancel</a>
+                    </div>
+                </div>
 			{!! Form::close() !!}
 		</div>
 	</div>
